@@ -23,10 +23,10 @@ class _ViewPageState extends State<ViewPage> {
         builder: (context,snapshot){
           print(snapshot.hasData.toString());
           if(snapshot.hasData){
-            return Icon(
-              Icons.check_circle_outline,
-              color: Colors.green,
-              size: 60,
+            final datos = snapshot.data;
+            return ListView.builder(
+              itemCount: datos.length,
+              itemBuilder: (context,i) => _crearItem(i,context,datos),
             );
           }else if(snapshot.hasError){
             return Icon(
@@ -45,4 +45,17 @@ class _ViewPageState extends State<ViewPage> {
         ),
       );
   }
+  Widget _crearItem(i,BuildContext context, List datos){
+    return Dismissible(
+      key: UniqueKey(),
+      background: Container(
+        color: Colors.red,
+      ),
+      child: ListTile(
+        title: Text(datos[i]['name']),
+        subtitle: Text(datos[i]['email']),
+      )
+    );
+  }
 }
+
