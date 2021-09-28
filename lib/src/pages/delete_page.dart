@@ -22,7 +22,6 @@ class _DeletePageState extends State<DeletePage> {
     });
     var data1 = json.encode(response1.body);
     var userdata1 = json.decode(data1);
-    print(userdata1.toString());
     return json.decode(userdata1);
   }
 

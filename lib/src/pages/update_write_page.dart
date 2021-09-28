@@ -31,7 +31,6 @@ class _UpdateWPageState extends State<UpdateWPage> {
     });
     var data = json.encode(response.body);
     var datauser = json.decode(data);
-    print(datauser.toString());
   }
   @override
   Widget build(BuildContext context) {
@@ -116,10 +115,6 @@ class _UpdateWPageState extends State<UpdateWPage> {
 
                           formKey.currentState.save();
                              id= lista['ID'].toString();
-                            print(id);
-                            print(name);
-                            print(usuario);
-                            print(email);
                             Navigator.pushNamed(context, 'home');
                             updateData();
                           },

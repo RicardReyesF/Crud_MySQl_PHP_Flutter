@@ -12,7 +12,6 @@ class _ViewPageState extends State<ViewPage> {
     final response = await http.get("http://192.168.1.166:80/obtenerdatos.php");
     var data = json.encode(response.body);
     var userdata = json.decode(data);
-    print(userdata.toString());
     return json.decode(userdata);
   }
   @override

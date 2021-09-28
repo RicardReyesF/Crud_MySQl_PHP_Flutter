@@ -20,7 +20,6 @@ class _HomePageState extends State<HomePage> {
     });
     var data = json.encode(response.body);
     var datauser = json.decode(data);
-    print(datauser.toString());
   }
 
   @override
