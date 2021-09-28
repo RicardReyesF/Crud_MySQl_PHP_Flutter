@@ -111,9 +111,18 @@ class _UpdateWPageState extends State<UpdateWPage> {
                     SizedBox(height: 20.0,),
               
                     RaisedButton(onPressed: (){
-                      id= lista['ID'].toString();
-                      updateData();
-                    },
+                      if (!formKey.currentState.validate()) return;
+                            print('Todo ok');
+
+                          formKey.currentState.save();
+                             id= lista['ID'].toString();
+                            print(id);
+                            print(name);
+                            print(usuario);
+                            print(email);
+                            Navigator.pushNamed(context, 'home');
+                            updateData();
+                          },
                     child: Text("Actualizar",style: TextStyle(color: Colors.white),),
                     ),
                   ],   
